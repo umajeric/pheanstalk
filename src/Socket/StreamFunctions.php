@@ -70,13 +70,11 @@ class StreamFunctions
 
     public function fsockopen($hostname, $port = -1, &$errno = null, &$errstr = null, $timeout = null, $persistent = false)
     {
-        if ($this->_socket === NULL && $persistent) {
-            $this->_socket = @pfsockopen($hostname, $port, $errno, $errstr, $timeout);
+        if ($persistent) {
+            return @pfsockopen($hostname, $port, $errno, $errstr, $timeout);
         } else {
-            $this->_socket = @fsockopen($hostname, $port, $errno, $errstr, $timeout);
+            return @fsockopen($hostname, $port, $errno, $errstr, $timeout);
         }
- 
-       return $this->_socket;
     }
 
     public function fwrite($handle, $string, $length = null)
