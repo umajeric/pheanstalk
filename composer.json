@@ -1,5 +1,5 @@
 {
-    "name": "VladaPetrovic/pheanstalk",
+    "name": "umajeric/pheanstalk",
     "type": "library",
     "description": "PHP client for beanstalkd queue",
     "keywords": ["beanstalkd"],
